@@ -1,0 +1,23 @@
+How to use git:
+
+in master:
+
+1. git status
+2. git pull (get up-to-date with other peoples' changes)
+3. git checkout -b NAME (creates branch with your name)
+4. do stuff
+5. git add . (to add everything)
+6. git commit -m "MESSAGE" (commit with message)
+7. git checkout master (go back to the master branch)
+8. git pull (make sure you're up-to-date)
+9. git merge NAME
+10. git push (this uploads your changes)
+11. git branch -d NAME
+
+
+start over
+
+
+
+
+
