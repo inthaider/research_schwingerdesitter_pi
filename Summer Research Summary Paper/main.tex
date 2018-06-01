@@ -1,0 +1,57 @@
+%\documentclass[12pt,preprint]{aastex6}
+%\documentclass[manuscript]{aastex6}
+\documentclass{emulateapj}
+\usepackage{esvect}
+\shorttitle{Schwinger in De Sitter}
+\shortauthors{Haider, Fertig, \& Bonga}
+
+\begin{document}
+\title{Schwinger Effect in De Sitter Space}
+
+\author{J. Haider, A. Fertig, \& B. Bonga}
+
+\affil{Perimeter Institution for Theoretical Physics}
+
+\email{syedjibran.haider@richmond.edu}
+
+
+\begin{abstract}
+Electric fields as well as gravitational fields can create pairs of particles via quantum tunneling (the Schwinger mechanism [1,2]). These processes are usually studied using quantum field theory on Minkowski or curved space-times. There is an alternative to Feynman diagram loop calculations -- the worldline formalism --, which can offer insights into the space-time evolution of the produced particles.
+When the solutions of the classical equations of motion are known, the path integral in the quantum mechanical propagator is reduced to an ordinary integral over the internal time of the particle. We can then study the semiclassical limit using Picard-Lefschetz theory [3], a set of mathematical tools for oscillatory integrals, which has given exciting new results in recent years (in quantum cosmology, QCD lattice computation, non-perturbative quantum field theory). 
+The goal of the project is to apply Picard-Lefschetz theory to pair production in de Sitter space-time (with or without a constant electric field [4]). The process, besides being interesting in itself, could help model pair production in black holes, bubble nucleation, or the production of universes.
+
+\end{abstract}
+
+\section{Background Information} \label{background}
+Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with the metric), tensors, field dynamics, Lorentz transformations, Lagrange multipliers, and gauge fixing.
+
+\subsection{Einstein Notation \& the Metric} \label{einstein}
+In Euclidean space, the invariant squared distance is represented by $\vec{a}^2=a_x^2 + a_y^2 + a_z^2$, where $\vec{a}=(a_x,a_y,a_z)$. Using index notation, we could write this as:
+\[ \vec{a}^2 = \sum_{i=1}^{3} a_ia_i\]
+where $a_i$ denotes each component of the vector, with $i=1,2,3$.
+
+Similarly, in relativity we have 4-component vectors in space-time, but here we use Greek letters to represent indices. So, a 4-vector would then be $a^\mu=(ca_t,a_x,a_y,a_z)$, with $\mu=0,1,2,3$. Note that $a^\mu$ represents the full vector component-wise. 
+
+Why do we need to use this notation, called Einstein notation, among other names, in order to talk about vectors in space-time? The need arises due to the geometry of Minkowski space, i.e. the geometry of space-time, which has the usual three Euclidean space coordinates along with an additional time coordinate, and how the Minkowskian geometry defines the invariant squared `distance' in Minkowski space. This invariant squared distance is $-(ca_t)^2+a_x^2+a_y^2+a_z^2$. Notice how we were easily able to represent the invariant squared distance in Euclidean space merely by squaring a Euclidean vector. We can't, however, do the same in Minkowski space since we have a minus sign with just the first term, and simply squaring a 4-vector would not return such an invariant line element. Einstein (index) notation helps us overcome this issue by allowing us to differentiate between different vectors and their components in a subtle manner. Briefly, then, we can extract the invariant line element by doing the following:
+\[ a^\mu a_\mu \equiv \sum_{\mu=0}^{3} a^\mu a_\mu\]
+where $a^\mu=(ca_t,a_x,a_y,a_z)$ and $a_\mu\equiv(-ca_t,a_x,a_y,a_z)$. The negative signs can be moved around, as some authors do, as long as the final invariant line element remains the same. Regardless, it is not defined to multiply two vectors together in this notation if both are `up' or `down' (in terms of how their indices are placed). To be specific, the `up' indexed vectors are called contravariant, and the `down' indexed covariant. Finally, note that the summation is implied without the sum sign.
+
+\subsection{Field Dynamics} \label{field}
+
+\subsection{Lorentz Transformation} \label{lorentz}
+
+
+
+\begin{thebibliography}{}
+
+[1] https://inspirehep.net/search?p=find+eprint+1110.1657 \newline
+[2] https://inspirehep.net/search?p=find+eprint+1510.05451  (extensive general review, no need to read it all) \newline
+[3] https://inspirehep.net/search?p=find+eprint+1703.02076   (study Picard-Lefschetz theory, section II) \newline
+[4] https://inspirehep.net/search?p=find+eprint+1401.4137   (sections 1-3) 
+
+\end{thebibliography}
+
+
+\end{document}
+
+
