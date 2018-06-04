@@ -2,6 +2,8 @@
 %\documentclass[manuscript]{aastex6}
 \documentclass{emulateapj}
 \usepackage{esvect}
+\usepackage{amsmath}
+
 \shorttitle{Schwinger in De Sitter}
 \shortauthors{Haider, Fertig, \& Bonga}
 
@@ -23,7 +25,7 @@ The goal of the project is to apply Picard-Lefschetz theory to pair production i
 \end{abstract}
 
 \section{Background Information} \label{background}
-Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with the metric), tensors, field dynamics, Lorentz transformations, Lagrange multipliers, and gauge fixing.
+Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with tensors and the metric), field dynamics, Lorentz transformations, Lagrange multipliers, gauge fixing, and Feynman path integral formulation.
 
 \subsection{Einstein Notation \& the Metric} \label{einstein}
 In Euclidean space, the invariant squared distance is represented by $\vec{a}^2=a_x^2 + a_y^2 + a_z^2$, where $\vec{a}=(a_x,a_y,a_z)$. Using index notation, we could write this as:
@@ -36,10 +38,68 @@ Why do we need to use this notation, called Einstein notation, among other names
 \[ a^\mu a_\mu \equiv \sum_{\mu=0}^{3} a^\mu a_\mu\]
 where $a^\mu=(ca_t,a_x,a_y,a_z)$ and $a_\mu\equiv(-ca_t,a_x,a_y,a_z)$. The negative signs can be moved around, as some authors do, as long as the final invariant line element remains the same. Regardless, it is not defined to multiply two vectors together in this notation if both are `up' or `down' (in terms of how their indices are placed). To be specific, the `up' indexed vectors are called contravariant, and the `down' indexed covariant. Finally, note that the summation is implied without the sum sign.
 
+In general relativity, when one generalizes to possibly curved 4-D space-times, Minkowski space must then also be generalized. In that case we have to introduce the \textit{metric} $g_{\mu\nu}$. The metric is a rank 2 tensor, i.e. a 2-D matrix. Since it has Greek letter indices we know it is 4x4 in size (one Greek index representing each dimension). When considering the metric, one must utilize operations from linear algebra, such as matrix multiplication.
+For the special case of flat Minkowski space, for example, the metric is
+\[ g\mu\nu = \begin{pmatrix}
+-1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1
+\end{pmatrix} \]
+
+One can think of $\mu=0,1,2,3$ and $\nu=0,1,2,3$ indexing the rows and columns. It is not so much that one of them corresponds to the rows and one to the columns as that the presence of both indicates that there are both rows and columns, i.e. that it is a matrix. If there was only one Greek letter index then it would indicate a vector.
+
+Observe, then, that using matrix multiplication,
+\[ g_{\mu\nu}a^{\nu} = \begin{pmatrix}
+-1 & 0 & 0 & 0 \\ 
+0 & 1 & 0 & 0 \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1
+\end{pmatrix} \begin{pmatrix}
+ca_t \\ 
+a_x \\ 
+a_y \\ 
+a_z 
+\end{pmatrix} = \begin{pmatrix}
+-ca_t \\ 
+a_x \\ 
+a_y \\ 
+a_z 
+\end{pmatrix} = a_{\mu} \]
+
+The result is a covariant (down index) vector because there is the negative in the 0-component. Then the vector product $a^{\mu}a_{\nu}$ can be expressed in terms of only contravariant (up index) 4-vectors and the metric:
+\[ a^{\mu}a_{\nu}= a^{\mu}g_{\mu\nu}a^{\nu} \]
+
+Again, note that \textit{repeated indexes are always summed or ‘collapsed’ over, and any summing or collapsing must have one up index and one down index}. It is simply not defined to have $a^{\mu}a^{\mu}$ (ultimately this derives from the need to preserve a negative in the square of a 4-vector, as seen above). Also, it is important to keep in mind that a Greek letter solely indicates that there are four components. $a^{\mu}$ is no different than $a^{\nu}$ – both represent a vector with four components.
+
+There would also be a contravariant metric $g^{\mu\nu}$ such that $g^{\mu\nu}g_{\mu\nu}= I$ where $I$ is the 4x4 identity matrix. Then $g^{\mu\nu}a_{\nu}=a^{\mu}$. In this way we speak of the metric “raising and lowering indices.”
+
+In a general curved spacetime the metric will be not a simple diagonal as above and would then “mix” the different components of 4-vectors when acting on them. It gets difficult to visualize and write all that out which is why Einstein notation is so useful [6].
+
 \subsection{Field Dynamics} \label{field}
 
 \subsection{Lorentz Transformation} \label{lorentz}
 
+\subsection{Lagrange Multipliers} \label{multpliers}
+
+\subsection{Gauge Fixing} \label{gauge}
+
+\subsection{Feynman Path Integrals} \label{feynman}
+Without going into the details of fundamental ideas of quantum mechanics, we note that for a given particle, there is a probability amplitude $\phi$ associated with each of the particle's trajectories (or, to generalize, with each of the specific events that are associated with anything in nature), where the square of the probability amplitude gives us the probability of the particle taking a particular trajectory. Given various alternative trajectories the particle can take from an initial point $a$ to a final point $b$, the sum of the amplitudes for each alternative trajectory returns an amplitude that can be associated with the overall trajectory from $a$ to $b$. The absolute square of the overall amplitude returns to us the probability of the particle reaching $b$ from $a$. Such an overall amplitude for an event is also called the \textit{kernel}, which may be given as $K(b,a)$ for the trajectory in our case. In contrast, classical mechanics asserts the existence of a single, unique trajectory for a particle going from $a$ to $b$. 
+
+We know how the principle of least action can be employed in Lagrangian mechanics to describe the behavior of a particle, so let's take a look at the quantum-mechanical formalism. So far we have talked about the amplitude without talking about what it actually is for each alternative trajectory, which is exactly what we need to determine in order to devise the sum of the amplitudes of all possible trajectories. It turns out that each trajectory of a particle contributes equally in terms of magnitude, but does so at different phases. The overall amplitude of the trajectories from $a$ to $b$ is given by:
+\[ K(b,a) = \sum_{\text{paths from $a$ to $b$}} \phi [x(t)] \]
+and the contribution of each path to the amplitude is given by:
+\[ \phi [x(t)] = k e^{(i/\hbar)S[x(t)]}, \]
+where $k$ is a normalization constant and $S$ is the action associated with the corresponding classical system. More precisely, the overall amplitude can be defined as:
+\[ K(b,a) = \int_{a}^{b} e^{(i/\hbar)S[b, a]} \mathcal{D}x(t), \]
+where $\mathcal{D}x(t)$ denotes the fact that we are integrating over all paths. This form is called the path integral.
+
+Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e. when $S$ is much bigger than $\hbar$) that results in the classical path. That is title the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory, hence these slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out, leaving just the classically predicted particular trajectory as the behavior of significance [5].
+
+?One-dimensional motion of particles traveling at the velocity of light??
+
+?Special examples, like motion in potential fields??
 
 
 \begin{thebibliography}{}
@@ -47,8 +107,11 @@ where $a^\mu=(ca_t,a_x,a_y,a_z)$ and $a_\mu\equiv(-ca_t,a_x,a_y,a_z)$. The negat
 [1] https://inspirehep.net/search?p=find+eprint+1110.1657 \newline
 [2] https://inspirehep.net/search?p=find+eprint+1510.05451  (extensive general review, no need to read it all) \newline
 [3] https://inspirehep.net/search?p=find+eprint+1703.02076   (study Picard-Lefschetz theory, section II) \newline
-[4] https://inspirehep.net/search?p=find+eprint+1401.4137   (sections 1-3) 
-
+[4] https://inspirehep.net/search?p=find+eprint+1401.4137   (sections 1-3) \newline
+[5] Quantum Mechanics and Path Integrals (Feynman and Hibbs) \newline
+[6] Relativity Index Notation Notes (Dr. Jack Singal) \newline
+[7] \newline
+[8] \newline
 \end{thebibliography}
 
 
