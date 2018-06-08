@@ -1,31 +1,40 @@
 %\documentclass[12pt,preprint]{aastex6}
 %\documentclass[manuscript]{aastex6}
-\documentclass{emulateapj}
+%\documentclass{emulateapj}
+\documentclass[12pt]{revtex4}
 \usepackage{esvect}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
-\shorttitle{Schwinger in De Sitter}
-\shortauthors{Haider, Fertig, \& Bonga}
+%\shorttitle{Schwinger in De Sitter}
+%\shortauthors{Haider, Fertig, \& Bonga}
 
 \begin{document}
-\title{Schwinger Effect in De Sitter Space}
+	
+	\begin{titlepage}
+		\title{Schwinger Effect in De Sitter Space}
+		
+		\author{J. Haider, A. Fertig, \& B. Bonga}
+		
+		\affiliation{Perimeter Institution for Theoretical Physics}
+		
+		\email{syedjibran.haider@richmond.edu}
+		
+		
+		\begin{abstract}
+			Electric fields as well as gravitational fields can create pairs of particles via quantum tunneling (the Schwinger mechanism [1,2]). These processes are usually studied using quantum field theory on Minkowski or curved space-times. There is an alternative to Feynman diagram loop calculations -- the worldline formalism --, which can offer insights into the space-time evolution of the produced particles.
+			When the solutions of the classical equations of motion are known, the path integral in the quantum mechanical propagator is reduced to an ordinary integral over the internal time of the particle. We can then study the semiclassical limit using Picard-Lefschetz theory [3], a set of mathematical tools for oscillatory integrals, which has given exciting new results in recent years (in quantum cosmology, QCD lattice computation, non-perturbative quantum field theory). 
+			The goal of the project is to apply Picard-Lefschetz theory to pair production in de Sitter space-time (with or without a constant electric field [4]). The process, besides being interesting in itself, could help model pair production in black holes, bubble nucleation, or the production of universes.
+			
+		\end{abstract}
+	\maketitle
+	\end{titlepage}
 
-\author{J. Haider, A. Fertig, \& B. Bonga}
-
-\affil{Perimeter Institution for Theoretical Physics}
-
-\email{syedjibran.haider@richmond.edu}
-
-
-\begin{abstract}
-Electric fields as well as gravitational fields can create pairs of particles via quantum tunneling (the Schwinger mechanism [1,2]). These processes are usually studied using quantum field theory on Minkowski or curved space-times. There is an alternative to Feynman diagram loop calculations -- the worldline formalism --, which can offer insights into the space-time evolution of the produced particles.
-When the solutions of the classical equations of motion are known, the path integral in the quantum mechanical propagator is reduced to an ordinary integral over the internal time of the particle. We can then study the semiclassical limit using Picard-Lefschetz theory [3], a set of mathematical tools for oscillatory integrals, which has given exciting new results in recent years (in quantum cosmology, QCD lattice computation, non-perturbative quantum field theory). 
-The goal of the project is to apply Picard-Lefschetz theory to pair production in de Sitter space-time (with or without a constant electric field [4]). The process, besides being interesting in itself, could help model pair production in black holes, bubble nucleation, or the production of universes.
-
-\end{abstract}
+\tableofcontents
+\newpage
 
 \section{Background Information} \label{background}
-Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with tensors and the metric), field dynamics, Lorentz transformations, Lagrange multipliers, gauge fixing, and Feynman path integral formulation.
+Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with tensors and the metric), field dynamics, Lorentz transformations, Lagrange multipliers, gauge fixing, Feynman path integral formalism, and ADM formalism.
 
 \subsection{Einstein Notation \& the Metric} \label{einstein}
 In Euclidean space, the invariant squared distance is represented by $\vec{a}^2=a_x^2 + a_y^2 + a_z^2$, where $\vec{a}=(a_x,a_y,a_z)$. Using index notation, we could write this as:
@@ -40,14 +49,14 @@ where $a^\mu=(ca_t,a_x,a_y,a_z)$ and $a_\mu\equiv(-ca_t,a_x,a_y,a_z)$. The negat
 
 In general relativity, when one generalizes to possibly curved 4-D space-times, Minkowski space must then also be generalized. In that case we have to introduce the \textit{metric} $g_{\mu\nu}$. The metric is a rank 2 tensor, i.e. a 2-D matrix. Since it has Greek letter indices we know it is 4x4 in size (one Greek index representing each dimension). When considering the metric, one must utilize operations from linear algebra, such as matrix multiplication.
 For the special case of flat Minkowski space, for example, the metric is
-\[ g\mu\nu = \begin{pmatrix}
+\[ g_{\mu\nu} = \begin{pmatrix}
 -1 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 0 \\ 
 0 & 0 & 1 & 0 \\ 
 0 & 0 & 0 & 1
 \end{pmatrix} \]
 
-One can think of $\mu=0,1,2,3$ and $\nu=0,1,2,3$ indexing the rows and columns. It is not so much that one of them corresponds to the rows and one to the columns as that the presence of both indicates that there are both rows and columns, i.e. that it is a matrix. If there was only one Greek letter index then it would indicate a vector.
+One can think of $\mu=0,1,2,3$ and $\nu=0,1,2,3$ indexing the rows and columns. For a symmetric metric, $\nu$ and $\mu$ are interchangable, so it is not so much that one of them corresponds to the rows and one to the columns as that the presence of both indicates that there are both rows and columns, i.e. that it is a matrix. However, for a general tensor, the indices are not interchangable. If there was only one Greek letter index then it would indicate a vector.
 
 Observe, then, that using matrix multiplication,
 \[ g_{\mu\nu}a^{\nu} = \begin{pmatrix}
@@ -67,22 +76,64 @@ a_y \\
 a_z 
 \end{pmatrix} = a_{\mu} \]
 
-The result is a covariant (down index) vector because there is the negative in the 0-component. Then the vector product $a^{\mu}a_{\nu}$ can be expressed in terms of only contravariant (up index) 4-vectors and the metric:
-\[ a^{\mu}a_{\nu}= a^{\mu}g_{\mu\nu}a^{\nu} \]
+The result is a covariant (down index) vector because there is a minus sign in the 0-component. Then the vector product $a^{\mu}a_{\mu}$ can be expressed in terms of only contravariant (up index) 4-vectors and the metric:
+\[ a^{\mu}a_{\mu}= a^{\mu}g_{\mu\nu}a^{\nu} \]
 
-Again, note that \textit{repeated indexes are always summed or ‘collapsed’ over, and any summing or collapsing must have one up index and one down index}. It is simply not defined to have $a^{\mu}a^{\mu}$ (ultimately this derives from the need to preserve a negative in the square of a 4-vector, as seen above). Also, it is important to keep in mind that a Greek letter solely indicates that there are four components. $a^{\mu}$ is no different than $a^{\nu}$ – both represent a vector with four components.
+Again, note that \textit{repeated indices are always summed or ‘collapsed’ over, and any summing or collapsing must have one up index and one down index}. It is simply not defined to have $a^{\mu}a^{\mu}$ (ultimately this derives from the need to preserve a negative in the square of a 4-vector, as seen above). Also, it is important to keep in mind that a Greek letter solely indicates that there are four components. $a^{\mu}$ is no different than $a^{\nu}$ – both represent a vector with four components.
 
-There would also be a contravariant metric $g^{\mu\nu}$ such that $g^{\mu\nu}g_{\mu\nu}= I$ where $I$ is the 4x4 identity matrix. Then $g^{\mu\nu}a_{\nu}=a^{\mu}$. In this way we speak of the metric “raising and lowering indices.”
+There would also be a contravariant metric $g^{\mu\nu}$ such that $g^{\mu\nu}g_{\mu\nu}= \mathbb{I}_4$ where $\mathbb{I}_4$ is the 4x4 identity matrix. Then $g^{\mu\nu}a_{\nu}=a^{\mu}$. In this way we speak of the metric “raising and lowering indices.”
 
 In a general curved spacetime the metric will be not a simple diagonal as above and would then “mix” the different components of 4-vectors when acting on them. It gets difficult to visualize and write all that out which is why Einstein notation is so useful [6].
 
 \subsection{Field Dynamics} \label{field}
+Let us derive the Klein-Gordon equation, as a sample problem of working with Einstein notation, using Lagrangian mechanics as applied on fields instead of particles. In order to do so, we first need to establish a different form of the Euler-Lagrange equation to describe the dynamics of a field.  Note that since we desire to draw a parallel between regular vector notation and Einstein notation, we will write down equations, or at least elaborate on the interpretation of specific elements of equations, using both notations at each step. 
 
-\subsection{Lorentz Transformation} \label{lorentz}
+The first step involves introducing the form of the action, but instead of starting with the Lagrangian, we start with the Lagrangian density, which is the Lagrangian per unit spatial volume. For a Lagrangian that depends on the field, $\phi(\vec{x},t)$, its time derivative, $\dot{\phi}(\vec{x},t)$, and its gradient, $\nabla \phi (\vec{x},t)$, we get
+\[ L(t)=\int d^3 x \, \mathcal{L}(\phi,\partial_{\mu}\phi),\]
+where $x$ is any of the three spatial dimensions, $\mathcal{L}$ is the Lagrangian density, and $\partial_{\mu} \phi = (\dot{\phi},\nabla\phi)$ is the four-gradient (i.e. the four-vector analogue of the gradient operator). Notice that the four-gradient allows the consolidation of the time derivative and gradient dependence of the Lagrangian because we are dealing with Minkowski space. The action is thus given by,
+\[ S = \int_{t_1}^{t^2}dt \, \int d^3 x \, \mathcal{L} = \int d^4 x \mathcal{L},\]
+where $x$ is now representative of all four coordinates of spacetime.
+
+Employing the principle of least action,
+\begin{equation} \label{leastaction}
+\delta S = \int d^4 x \, \delta \mathcal{L} = 0.
+\end{equation}
+Here, the Lagrangian (density) is dependent on $\phi$ and $\partial_{\mu} \phi$, thus
+\[ \delta \mathcal{L} = \frac{\partial \mathcal{L}}{\partial \phi} \delta \phi + \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)} \delta (\partial_{\mu} \phi)\]
+Plugging this back into Eq. \ref{leastaction} returns:
+\begin{align*}
+\delta S &= \int d^4 x \, [\frac{\partial \mathcal{L}}{\partial \phi} \delta \phi + \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)} \delta (\partial_{\mu} \phi)] \\
+&= \int d^4 x \, [\frac{\partial \mathcal{L}}{\partial \phi} + \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)})]\delta \phi + \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)}\delta \phi)\end{align*} 
+Since $\delta \phi = 0$ at the end points, the last term, which is a total derivative, disappears. This necessitates the following condition:
+\[ \partial_{\mu}(\frac{\mathcal{L}}{\partial(\partial_{\mu}\phi)}) - \frac{\mathcal{L}}{\partial \phi} = 0\]
+which is the Euler-Lagrange equation for a field $\phi$.
+
+Now, having ascertained the Euler-Lagrange equation, the equations of motion can be determined by using the Lagrangian density for a real scalar field $\phi (\vec{x},t)$,
+\[ \mathcal{L} = \dfrac{1}{2} \eta^{\mu\nu} \partial_{\mu} \phi \partial_{\nu} \phi - \dfrac{1}{2}m^2\phi^2,\]
+using the (+ - - -) Minkowski space metric signature. In regular vector notation, the Lagrangian density can be written as,
+\[ \mathcal{L} = \dfrac{1}{2} \dot{\phi^2} - \dfrac{1}{2}(\nabla \phi)^2 - \dfrac{1}{2}m^2\phi^2.\]
+
+We know that the Lagrangian $L=T - V$, where $T$ is the kinetic term and $V$ is the potential term. In our case,
+\[ T = \int d^3 x \, \frac{1}{2} \dot{\phi}^2 \]
+and,
+\[ V = \int d^3 x \, \frac{1}{2} (\nabla \phi)^2 + \frac{1}{2}m^2 \phi^2.\]
+In the expression for the potential energy, the first term is generally called the gradient energy and the second term the potential energy.
+
+In order to determine the equations of motion, we need to solve the Euler-Lagrange equation by first computing,
+\[ \frac{\partial \mathcal{L}}{\partial \phi} = -m^2 \phi \text{  and  } \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)} = \partial^{\mu}\phi \equiv (\dot{\phi},-\nabla\phi)\]
+
+Finally, putting our results together:
+\[ \partial_{\mu}\partial^{\mu}\phi + m^2 \phi = 0 .\]
+Or equivalently, in regular vector notation,
+\[ \ddot{\phi} - \nabla^2\phi + m^2 \phi = 0. \]
 
 \subsection{Lagrange Multipliers} \label{multpliers}
-
-\subsection{Gauge Fixing} \label{gauge}
+Lagrange multipliers are employed in the method of Lagrange multipliers that allows the optimization (i.e.~finding minima and maxima) of a function $f(x,y,z)$ subject to a constraint given by $g(x,y,z)=k$. The method involves solving the following:
+\begin{align*}
+	\nabla f(x,y,z) &= \lambda \nabla g(x,y,z) \\
+	g(x,y,z)&=k
+\end{align*}
+where $\lambda$ is the Lagrange multiplier. Having solved the above equations, all solutions $(x,y,z)$ are plugged into $f(x,y,z)$ to identify minimum/maximum values, if they exist. 
 
 \subsection{Feynman Path Integrals} \label{feynman}
 Without going into the details of fundamental ideas of quantum mechanics, we note that for a given particle, there is a probability amplitude $\phi$ associated with each of the particle's trajectories (or, to generalize, with each of the specific events that are associated with anything in nature), where the square of the probability amplitude gives us the probability of the particle taking a particular trajectory. Given various alternative trajectories the particle can take from an initial point $a$ to a final point $b$, the sum of the amplitudes for each alternative trajectory returns an amplitude that can be associated with the overall trajectory from $a$ to $b$. The absolute square of the overall amplitude returns to us the probability of the particle reaching $b$ from $a$. Such an overall amplitude for an event is also called the \textit{kernel}, which may be given as $K(b,a)$ for the trajectory in our case. In contrast, classical mechanics asserts the existence of a single, unique trajectory for a particle going from $a$ to $b$. 
@@ -95,12 +146,15 @@ where $k$ is a normalization constant and $S$ is the action associated with the 
 \[ K(b,a) = \int_{a}^{b} e^{(i/\hbar)S[b, a]} \mathcal{D}x(t), \]
 where $\mathcal{D}x(t)$ denotes the fact that we are integrating over all paths. This form is called the path integral.
 
-Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e. when $S$ is much bigger than $\hbar$) that results in the classical path. That is title the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory, hence these slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out, leaving just the classically predicted particular trajectory as the behavior of significance [5].
+Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e.~when $S$ is much bigger than $\hbar$) that results in the classical path. That is, for the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory. These slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out. Ultimately, this yields the classically predicted particular trajectory as the behavior of significance [5].
 
 ?One-dimensional motion of particles traveling at the velocity of light??
 
 ?Special examples, like motion in potential fields??
 
+\subsection{Gauge Fixing} \label{gauge}
+
+\subsection{ADM Formalism} \label{ADM}
 
 \begin{thebibliography}{}
 
