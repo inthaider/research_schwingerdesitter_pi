@@ -5,6 +5,7 @@
 \usepackage{esvect}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 
 %\shorttitle{Schwinger in De Sitter}
 %\shortauthors{Haider, Fertig, \& Bonga}
@@ -146,15 +147,79 @@ where $k$ is a normalization constant and $S$ is the action associated with the 
 \[ K(b,a) = \int_{a}^{b} e^{(i/\hbar)S[b, a]} \mathcal{D}x(t), \]
 where $\mathcal{D}x(t)$ denotes the fact that we are integrating over all paths. This form is called the path integral.
 
-Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e.~when $S$ is much bigger than $\hbar$) that results in the classical path. That is, for the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory. These slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out. Ultimately, this yields the classically predicted particular trajectory as the behavior of significance [5].
+Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e. when $S$ is much bigger than $\hbar$) that results in the classical path. That is, for the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory. These slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out. Ultimately, this yields the classically predicted particular trajectory as the behavior of significance. In the classical approximation, the kernel can thus be expressed in the form:
+\begin{equation} \label{sckernel}
+K(b,a)=\text{``smooth function''}\cdot e^{iS_{cl}/\hbar}
+\end{equation} 
 
-?One-dimensional motion of particles traveling at the velocity of light??
+\subsubsection{Example: Harmonic Oscillator}
+For a harmonic oscillator, the Lagrangian is:
+\[ L = \frac{m}{2}\dot{x}^2 - \frac{m \omega^2}{2}x^2 \]
+We need to determine the equations of motion and solve them for $x(t)$ in order to find the classical action. The Euler-Lagrange equation gives us:
+\begin{equation*}
+\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial x} = m\ddot{x}+m\omega^2x=0
+\end{equation*}
+The equation of motion is a differential equation, which can be solved to get $x(t)$ with the boundary conditions $x(0) = x_a$ and $x(T)=x_b$, where $T=t_b-t_a$, and $t_b$ is the final time and $t_a$ is the initial time. This returns:
+\[ x(t)= x_a \cos(t\omega) - x_a \cot(T \omega)\sin(t \omega)+x_b\csc(T \omega)\sin(t \omega) \]
 
-?Special examples, like motion in potential fields??
+Plotting the position $x$ with respect to time $t$ after defining the parameters yields the typical sinusoidal trajectory of a harmonic oscillator.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"oscillator trajectory"}
+	\caption[Trajectories of a harmonic oscillator with different parameters]{Red curve: $x_a=2$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$.\\ Green curve: $x_a=0$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$.}
+	\label{fig:oscillator}
+\end{figure}
+
+With the solution for $x(t)$ plugged in, the classical action ends up being:
+\begin{multline*}
+S = \int_{0}^{T} \frac{1}{2} m (-x_a \omega \cos(t \omega) \cot(T \omega) + 
+x_b \omega \cos(t \omega) \csc(T \omega) - 
+x_a \omega \sin(t \omega))^2 - \\
+\frac{1}{2} m \omega^2 (x_a \cos(t \omega) - 
+x_a \cot(T \omega) \sin(t \omega) + 
+x_b \csc(T \omega) \sin(t \omega))^2 \\
+= \frac{1}{2} m \omega (-2 x_a x_b + (x_a^2 + x_b^2) \cos(T \omega)) \csc(T \omega)
+\end{multline*} 
+
+In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be expressed as 
+\[ K=F(T) \exp \Bigg[{\Bigg\{\frac{im\omega}{2 \hbar \sin\omega T} [-2 x_a x_b + (x_a^2 + x_b^2) \cos \omega T]\Bigg\}}\Bigg],\]
+where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found [5]. 
+
+\subsubsection{More Significant Example: Harmonic Oscillator}
+For a relativistic particle in an electric field, with motion restricted to just one spatial coordinate $x$, the Lagrangian is:
+\[ L = \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T),\]
+where $N$ is the lapse, and $k$ is the electric field plus ?.
+
+We need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
+\begin{align*}
+\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial x} &= -k t'(T) + \frac{m x''(T)}{N} =0\\
+\frac{d}{dt}\frac{\partial L}{\partial \dot{t}}-\frac{\partial L}{\partial t} &= k x'(T) - \frac{m t''(T)}{N} =0
+\end{align*}
+The equations of motion are a system of differential equation, which can be solved to get $x(T)$ and $t(T)$ with the simplified boundary conditions $x(0) = x_a = 0$, $x(1)=x_b$, $t(0) = t_a = 0$, and $t(1)=t_b$, where $x_b$ and $t_b$ are the final space-time coordinates and $x_a$ and $t_a$ are the initial space-time coordinates. This returns:
+\begin{align*}
+x(T) &= csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(x_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
+t_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\bigg)\\
+t(T)&= csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(t_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
+x_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\bigg)
+\end{align*} 
+
+Plotting the time-coordinate $t(T)$ with respect to the spatial-coordinate $x(T)$ after defining and varying the parameters yields insightful visual information (insert plot here - which one?).
+
+For the simplified case of $x_a=0$ and $t_a=0$, with the solutions for $x(T)$ and $t(T)$ plugged in, and integrating the Lagrangian over $T$ from 0 to 1, the classical action ends up being:
+\begin{equation*}
+S = \frac{1}{4} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)
+\end{equation*} 
+
+In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be expressed as 
+\[ K=F(T) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
+where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found. 
 
 \subsection{Gauge Fixing} \label{gauge}
+Coping with redundant degrees of freedom in field variables.
 
 \subsection{ADM Formalism} \label{ADM}
+
 
 \begin{thebibliography}{}
 
