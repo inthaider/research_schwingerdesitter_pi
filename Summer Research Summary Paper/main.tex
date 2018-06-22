@@ -6,7 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-
+\DeclareMathOperator{\csch}{csch}
 %\shorttitle{Schwinger in De Sitter}
 %\shortauthors{Haider, Fertig, \& Bonga}
 
@@ -38,7 +38,7 @@
 Before diving fully into the project, i.e. to look at the Schwinger effect in de Sitter space-time, I will begin by first working with the Schwinger effect in electric fields to make acquaintance with the fundamental processes that will be studied throughout the project. In order to do that, there is a further need to establish some foundational physical and mathematical concepts, viz. Einstein notation (along with tensors and the metric), field dynamics, Lorentz transformations, Lagrange multipliers, gauge fixing, Feynman path integral formalism, and ADM formalism.
 
 \subsection{Einstein Notation \& the Metric} \label{einstein}
-In Euclidean space, the invariant squared distance is represented by $\vec{a}^2=a_x^2 + a_y^2 + a_z^2$, where $\vec{a}=(a_x,a_y,a_z)$. Using index notation, we could write this as:
+In Euclidean space (Cartesian coordinates), the invariant squared distance is represented by $\vec{a}^2=a_x^2 + a_y^2 + a_z^2$, where $\vec{a}=(a_x,a_y,a_z)$. Using index notation, we could write this as:
 \[ \vec{a}^2 = \sum_{i=1}^{3} a_ia_i\]
 where $a_i$ denotes each component of the vector, with $i=1,2,3$.
 
@@ -104,7 +104,7 @@ Here, the Lagrangian (density) is dependent on $\phi$ and $\partial_{\mu} \phi$,
 Plugging this back into Eq. \ref{leastaction} returns:
 \begin{align*}
 \delta S &= \int d^4 x \, [\frac{\partial \mathcal{L}}{\partial \phi} \delta \phi + \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)} \delta (\partial_{\mu} \phi)] \\
-&= \int d^4 x \, [\frac{\partial \mathcal{L}}{\partial \phi} + \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)})]\delta \phi + \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)}\delta \phi)\end{align*} 
+&= \int d^4 x \, [\frac{\partial \mathcal{L}}{\partial \phi} - \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)})]\delta \phi + \partial_{\mu}(\frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \phi)}\delta \phi)\end{align*} 
 Since $\delta \phi = 0$ at the end points, the last term, which is a total derivative, disappears. This necessitates the following condition:
 \[ \partial_{\mu}(\frac{\mathcal{L}}{\partial(\partial_{\mu}\phi)}) - \frac{\mathcal{L}}{\partial \phi} = 0\]
 which is the Euler-Lagrange equation for a field $\phi$.
@@ -159,7 +159,7 @@ We need to determine the equations of motion and solve them for $x(t)$ in order 
 \begin{equation*}
 \frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial x} = m\ddot{x}+m\omega^2x=0
 \end{equation*}
-The equation of motion is a differential equation, which can be solved to get $x(t)$ with the boundary conditions $x(0) = x_a$ and $x(T)=x_b$, where $T=t_b-t_a$, and $t_b$ is the final time and $t_a$ is the initial time. This returns:
+The equation of motion is a differential equation, which can be solved to get $x(t)$ with the boundary conditions $x(0) = x_a$ and $x(T)=x_b$, where $T=t_b-t_a$, and $t_b$ is the final time and $t_a$ is the initial time and scaled to be equal to zero. This returns:
 \[ x(t)= x_a \cos(t\omega) - x_a \cot(T \omega)\sin(t \omega)+x_b\csc(T \omega)\sin(t \omega) \]
 
 Plotting the position $x$ with respect to time $t$ after defining the parameters yields the typical sinusoidal trajectory of a harmonic oscillator.
@@ -186,21 +186,21 @@ In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be exp
 \[ K=F(T) \exp \Bigg[{\Bigg\{\frac{im\omega}{2 \hbar \sin\omega T} [-2 x_a x_b + (x_a^2 + x_b^2) \cos \omega T]\Bigg\}}\Bigg],\]
 where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found [5]. 
 
-\subsubsection{More Significant Example: Harmonic Oscillator}
-For a relativistic particle in an electric field, with motion restricted to just one spatial coordinate $x$, the Lagrangian is:
+\subsubsection{More Significant Example: Particle in Electric Field}
+For a charged relativistic particle in an electric field, with motion restricted to just one spatial coordinate $x$, the Lagrangian is:
 \[ L = \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T),\]
-where $N$ is the lapse, and $k$ is the electric field plus ?.
+where $N$ is the lapse, and $k$ is the strength of the electric field in positive $x$-direction times the charge of the relativistic particle. Note that the Metric signature being used here is (- + + +).
 
 We need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
 \begin{align*}
-\frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial x} &= -k t'(T) + \frac{m x''(T)}{N} =0\\
-\frac{d}{dt}\frac{\partial L}{\partial \dot{t}}-\frac{\partial L}{\partial t} &= k x'(T) - \frac{m t''(T)}{N} =0
+\frac{d}{dt}\frac{\partial L}{\partial x'}-\frac{\partial L}{\partial x} &= -k t'(T) + \frac{m x''(T)}{N} =0\\
+\frac{d}{dt}\frac{\partial L}{\partial x'}-\frac{\partial L}{\partial t} &= k x'(T) - \frac{m t''(T)}{N} =0
 \end{align*}
 The equations of motion are a system of differential equation, which can be solved to get $x(T)$ and $t(T)$ with the simplified boundary conditions $x(0) = x_a = 0$, $x(1)=x_b$, $t(0) = t_a = 0$, and $t(1)=t_b$, where $x_b$ and $t_b$ are the final space-time coordinates and $x_a$ and $t_a$ are the initial space-time coordinates. This returns:
 \begin{align*}
-x(T) &= csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(x_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
+x(T) &= \csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(x_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
 t_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\bigg)\\
-t(T)&= csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(t_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
+t(T)&= \csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(t_b \cosh\bigg(\frac{k N (T-1)}{2m}\bigg)+ 
 x_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\bigg)
 \end{align*} 
 
@@ -219,7 +219,7 @@ where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be fou
 Coping with redundant degrees of freedom in field variables.
 
 \subsection{ADM Formalism} \label{ADM}
-
+``A good source for this would be one of the appendices of "Numerical Relativity: Solving Einstein's Equations on the Computer" by Shapiro \& Baumgarte''
 
 \begin{thebibliography}{}
 
