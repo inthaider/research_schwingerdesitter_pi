@@ -8,6 +8,7 @@
 \contentsline {subsection}{\numberline {D}Feynman Path Integrals}{7}{}
 \contentsline {subsubsection}{\numberline {1}Example: Harmonic Oscillator}{9}{}
 \contentsline {subsubsection}{\numberline {2}More Significant Example: Particle in Electric Field}{10}{}
-\contentsline {subsection}{\numberline {E}Gauge Fixing}{11}{}
-\contentsline {subsection}{\numberline {F}ADM Formalism}{11}{}
-\contentsline {section}{\numberline {}References}{11}{}
+\contentsline {paragraph}{\numberline {a}Finding the Kernel}{11}{}
+\contentsline {subsection}{\numberline {E}Gauge Fixing}{12}{}
+\contentsline {subsection}{\numberline {F}ADM Formalism}{12}{}
+\contentsline {section}{\numberline {}References}{12}{}

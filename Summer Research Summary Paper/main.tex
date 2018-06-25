@@ -215,6 +215,17 @@ In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be exp
 \[ K=F(T) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
 where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found. 
 
+\paragraph{Finding the Kernel}
+The kernel is ultimately an integral over N from 0 to [Infinity] of the integrand below (stored as Int):
+
+However, this integral is extremely difficult (or impossible?) to solve analytically, so we need to use an approximation.
+
+Specifically, we will use a saddle point approximation. That involves allowing N to be complex, and thus allowing the function (i.e. the integrand) to have dependence on complex N (introducing the complex plane). The original contour of the function in the complex plane is very much oscillatory, with an every increasing amplitude of oscillations, which is why it is so tough to solve the integral analytically.Using Cauchy's theorem, we can deform the original oscillatory contour of the function, which would be a line integral in the 3D-space and restricted to real values of N, to any other "well-behaved" contour such that the contour does not pass over any undefined points (i.e. the function needs to be holomorphic), and the integral over this new contour would be the same as the original contour integral. To quote Wikipedia:  "...if two different paths connect the same two points, and a function is holomorphic everywhere in between the two paths, then the two path integrals of the function will be the same." (More about holomorphic functions later?) 
+
+Deforming the original path is helpful in the approximation process since the path can be deformed to pass through the highest stationary point/s, with other conditions satisfied of course, and then the path integral would be dominated by that stationary point (or points). It turns out that the only extrema possible in our case are saddle points, so we deform the path to pass through a saddle point (with steepest descent?). [https://www2.ph.ed.ac.uk/~dmarendu/MOMP/lecture05.pdf]
+
+$We have been talking about our oscillatory "function" as the whole integrand, but, ignoring the prefactor for now, truly what is relevant is the classical action, Scl, because when we set d(Int)/dN=0 in order to find the extrema, we get d(IScl/HBar)/dN e^(IScl/HBar])=0 , where the exponent term can't go to 0, and I and HBar] are constants, so we know that the extrema are given by d(Scl)/dN=0, thus the oscillatory function we are concerned with is just Scl.$
+
 \subsection{Gauge Fixing} \label{gauge}
 Coping with redundant degrees of freedom in field variables.
 

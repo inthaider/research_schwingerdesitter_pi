@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 JUN 2018 01:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 JUN 2018 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -313,18 +313,18 @@ Overfull \hbox (6.74988pt too wide) detected at line 10
  []
 
 
-Overfull \hbox (6.74988pt too wide) detected at line 11
- \OT1/cmr/m/n/12 11
- []
-
-
 Overfull \hbox (6.74988pt too wide) detected at line 12
- \OT1/cmr/m/n/12 11
+ \OT1/cmr/m/n/12 12
  []
 
 
 Overfull \hbox (6.74988pt too wide) detected at line 13
- \OT1/cmr/m/n/12 11
+ \OT1/cmr/m/n/12 12
+ []
+
+
+Overfull \hbox (6.74988pt too wide) detected at line 14
+ \OT1/cmr/m/n/12 12
  []
 
 )
@@ -341,39 +341,61 @@ Package pdftex.def Info: "oscillator trajectory".png  used on input line 169.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10 <./oscillator trajectory.png (PNG copy)>]
+[9] [10 <./oscillator trajectory.png (PNG copy)>] [11]
+Overfull \hbox (505.02095pt too wide) in paragraph at lines 227--228
+[]$\OML/cmm/m/it/12 Wehavebeentalkingaboutouroscillatory\OT1/cmr/m/n/12 "\OML/c
+mm/m/it/12 function\OT1/cmr/m/n/12 "\OML/cmm/m/it/12 asthewholeintegrand; but; 
+ignoringtheprefactorfornow; trulywhatisrelevantistheclassicalaction; Scl; becau
+sewhenwesetd\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Int\OT1/cmr/m/n/12 )\OML/cmm/m/it
+/12 =dN \OT1/cmr/m/n/12 =
+ []
 
-Package natbib Warning: Empty `thebibliography' environment on input line 234.
 
-[11] [12] (./main.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 inordertofindtheextrema; wegetd\OT1/cmr/m/n/1
+2 (\OML/cmm/m/it/12 IScl=HBar\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 =dNe[]IScl=HBar\
+OT1/cmr/m/n/12 ]) =
+ []
+
+
+Overfull \hbox (134.61963pt too wide) in paragraph at lines 227--228
+\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; wheretheexponenttermcan[]tgoto\OT1/cmr/m/n/
+12 0\OML/cmm/m/it/12 ; andIandHBar\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 areconstant
+s; soweknowthattheextremaaregivenbyd\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Scl\OT1/c
+mr/m/n/12 )\OML/cmm/m/it/12 =dN \OT1/cmr/m/n/12 =
+ []
+
+
+Package natbib Warning: Empty `thebibliography' environment on input line 245.
+
+[12] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  3974 strings out of 492649
  51770 string characters out of 6129622
- 131644 words of memory out of 5000000
+ 133644 words of memory out of 5000000
  7795 multiletter control sequences out of 15000+600000
  14208 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,12n,30p,1077b,343s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
->
-Output written on main.pdf (12 pages, 249393 bytes).
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.p
+fb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
+sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/l
+ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (12 pages, 255793 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream
