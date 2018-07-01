@@ -167,7 +167,7 @@ Plotting the position $x$ with respect to time $t$ after defining the parameters
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{"oscillator trajectory"}
-	\caption[Trajectories of a harmonic oscillator with different parameters]{Red curve: $x_a=2$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$.\\ Green curve: $x_a=0$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$.}
+	\caption{Red curve: $x_a=2$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$. Green curve: $x_a=0$, $x_b=4$, $\omega=1$, $m=1$, and $T=1$.}
 	\label{fig:oscillator}
 \end{figure}
 
@@ -204,27 +204,42 @@ t(T)&= \csch \bigg(\frac{k N}{2 m}\bigg) \Biggr(t_b \cosh\bigg(\frac{k N (T-1)}{
 x_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\bigg)
 \end{align*} 
 
-Plotting the time-coordinate $t(T)$ with respect to the spatial-coordinate $x(T)$ after defining and varying the parameters yields insightful visual information (insert plot here - which one?).
+Plotting the time-coordinate $t(T)$ with respect to the spatial-coordinate $x(T)$ after defining and varying the parameters yields insightful graphical information (insert plot here - which one?).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{integrandplot}
+	\caption{Long caption}
+	\label{integrandplot}
+\end{figure}
+
 
 For the simplified case of $x_a=0$ and $t_a=0$, with the solutions for $x(T)$ and $t(T)$ plugged in, and integrating the Lagrangian over $T$ from 0 to 1, the classical action ends up being:
 \begin{equation*}
 S = \frac{1}{4} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)
 \end{equation*} 
 
-In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be expressed as 
-\[ K=F(T) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
-where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found. 
+In the semiclassical limit, the kernel can then be expressed as 
+\[ K=\int_{0}^{\infty} dN\ F(T) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
+where $F(T)$ is the ``smooth function'', or the `prefactor', which we known to be of the form: $\frac{1}{\sqrt{Det(M)}}$, where $M$ is the following matrix:
+\[ M=\begin{pmatrix}
+\frac{\partial^2 S}{\partial x_a \partial x_b} & \frac{\partial^2 S}{\partial x_a \partial t_b} \\ 
+\frac{\partial^2 S}{\partial t_a \partial x_b} & \frac{\partial^2 S}{\partial t_a \partial t_b} 
+\end{pmatrix} = 
+\begin{pmatrix}
+-\frac{k}{2}  \coth(\frac{k N}{2 m}) & \frac{k}{2} \\ 
+-\frac{k}{2} & \frac{k}{2} \coth(\frac{k N}{2 m})
+\end{pmatrix} \]
+Putting this together, we get the prefactor:
+\[ \frac{2}{\sqrt{-k^2 \csch(\frac{k N}{2 m})^2}} \]
 
-\paragraph{Finding the Kernel}
-The kernel is ultimately an integral over N from 0 to [Infinity] of the integrand below (stored as Int):
+As we can see, the kernel is ultimately an integral over $N$ from 0 to $\infty$, however, this integral is extremely difficult (or impossible?) to solve analytically, so we need to use an approximation.
 
-However, this integral is extremely difficult (or impossible?) to solve analytically, so we need to use an approximation.
-
-Specifically, we will use a saddle point approximation. That involves allowing N to be complex, and thus allowing the function (i.e. the integrand) to have dependence on complex N (introducing the complex plane). The original contour of the function in the complex plane is very much oscillatory, with an every increasing amplitude of oscillations, which is why it is so tough to solve the integral analytically.Using Cauchy's theorem, we can deform the original oscillatory contour of the function, which would be a line integral in the 3D-space and restricted to real values of N, to any other "well-behaved" contour such that the contour does not pass over any undefined points (i.e. the function needs to be holomorphic), and the integral over this new contour would be the same as the original contour integral. To quote Wikipedia:  "...if two different paths connect the same two points, and a function is holomorphic everywhere in between the two paths, then the two path integrals of the function will be the same." (More about holomorphic functions later?) 
+Specifically, we will use the saddle point approximation. That involves allowing $N$ to be complex, letting the function (i.e. the integrand of the kernel) to have dependence on complex $N$ and thus introducing the complex plane. The original contour of the function in the complex plane is very much oscillatory, with an every increasing amplitude of oscillations, which is why it is so tough to solve the integral analytically.Using Cauchy's theorem, we can deform the original oscillatory contour of the function, which would be a line integral in the 3D-space and restricted to real values of N, to any other "well-behaved" contour such that the contour does not pass over any undefined points (i.e. the function needs to be holomorphic), and the integral over this new contour would be the same as the original contour integral. To quote Wikipedia:  "...if two different paths connect the same two points, and a function is holomorphic everywhere in between the two paths, then the two path integrals of the function will be the same." (More about holomorphic functions later?) 
 
 Deforming the original path is helpful in the approximation process since the path can be deformed to pass through the highest stationary point/s, with other conditions satisfied of course, and then the path integral would be dominated by that stationary point (or points). It turns out that the only extrema possible in our case are saddle points, so we deform the path to pass through a saddle point (with steepest descent?). [https://www2.ph.ed.ac.uk/~dmarendu/MOMP/lecture05.pdf]
 
-$We have been talking about our oscillatory "function" as the whole integrand, but, ignoring the prefactor for now, truly what is relevant is the classical action, Scl, because when we set d(Int)/dN=0 in order to find the extrema, we get d(IScl/HBar)/dN e^(IScl/HBar])=0 , where the exponent term can't go to 0, and I and HBar] are constants, so we know that the extrema are given by d(Scl)/dN=0, thus the oscillatory function we are concerned with is just Scl.$
+We have been talking about our oscillatory "function" as the whole integrand, but, ignoring the prefactor for now, truly what is relevant is the classical action, Scl, because when we set d(Int)/dN=0 in order to find the extrema, we get d(IScl/HBar)/dN $e^(IScl/HBar])=0$ , where the exponent term can't go to 0, and I and HBar] are constants, so we know that the extrema are given by d(Scl)/dN=0, thus the oscillatory function we are concerned with is just Scl.
 
 \subsection{Gauge Fixing} \label{gauge}
 Coping with redundant degrees of freedom in field variables.
