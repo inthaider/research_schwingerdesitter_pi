@@ -2,13 +2,19 @@
 %\documentclass[manuscript]{aastex6}
 %\documentclass{emulateapj}
 \documentclass[12pt]{revtex4}
-\usepackage{esvect}
+%\usepackage{esvect}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{color}
 \DeclareMathOperator{\csch}{csch}
 %\shorttitle{Schwinger in De Sitter}
 %\shortauthors{Haider, Fertig, \& Bonga}
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+
+
 
 \begin{document}
 	
@@ -142,15 +148,16 @@ Without going into the details of fundamental ideas of quantum mechanics, we not
 We know how the principle of least action can be employed in Lagrangian mechanics to describe the behavior of a particle, so let's take a look at the quantum-mechanical formalism. So far we have talked about the amplitude without talking about what it actually is for each alternative trajectory, which is exactly what we need to determine in order to devise the sum of the amplitudes of all possible trajectories. It turns out that each trajectory of a particle contributes equally in terms of magnitude, but does so at different phases. The overall amplitude of the trajectories from $a$ to $b$ is given by:
 \[ K(b,a) = \sum_{\text{paths from $a$ to $b$}} \phi [x(t)] \]
 and the contribution of each path to the amplitude is given by:
-\[ \phi [x(t)] = k e^{(i/\hbar)S[x(t)]}, \]
+\[ \phi [x(t)] = k \; e^{(i/\hbar)S[x(t)]}, \]
 where $k$ is a normalization constant and $S$ is the action associated with the corresponding classical system. More precisely, the overall amplitude can be defined as:
-\[ K(b,a) = \int_{a}^{b} e^{(i/\hbar)S[b, a]} \mathcal{D}x(t), \]
+\[ K(b,a) = \int_{a}^{b}\mathcal{D}x(t) \; e^{(i/\hbar)S[b, a]} , \]
 where $\mathcal{D}x(t)$ denotes the fact that we are integrating over all paths. This form is called the path integral.
 
-Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e. when $S$ is much bigger than $\hbar$) that results in the classical path. That is, for the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory. These slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out. Ultimately, this yields the classically predicted particular trajectory as the behavior of significance. In the classical approximation, the kernel can thus be expressed in the form:
+Phase differences between alternative trajectories cause constructive and destructive interference between them, and it is the classical limit of this interference (i.e. when $S$ is much bigger than $\hbar$) that results in the classical path. That is, for the particular trajectory that the particle would take in the classical case, with minimum action, the phase changes infinitesimally with an infinitesimal change in the trajectory. These slightly different trajectories around the classically predicted trajectory will interfere constructively, whereas elsewhere, slight changes in the trajectory result in substantial changes in the phase such that their contributions to the amplitude will cancel out. Ultimately, this yields the classically predicted particular trajectory as the behavior of significance. In the semi-classical approximation, the kernel can thus be expressed in the form:
 \begin{equation} \label{sckernel}
-K(b,a)=\text{``smooth function''}\cdot e^{iS_{cl}/\hbar}
+K(b,a)=\text{``smooth function''}\cdot e^{iS_{\rm cl}/\hbar}
 \end{equation} 
+where $S_{\rm cl}$ knows about the boundary conditions $a$ and $b$.
 
 \subsubsection{Example: Harmonic Oscillator}
 For a harmonic oscillator, the Lagrangian is:
@@ -159,10 +166,10 @@ We need to determine the equations of motion and solve them for $x(t)$ in order 
 \begin{equation*}
 \frac{d}{dt}\frac{\partial L}{\partial \dot{x}}-\frac{\partial L}{\partial x} = m\ddot{x}+m\omega^2x=0
 \end{equation*}
-The equation of motion is a differential equation, which can be solved to get $x(t)$ with the boundary conditions $x(0) = x_a$ and $x(T)=x_b$, where $T=t_b-t_a$, and $t_b$ is the final time and $t_a$ is the initial time and scaled to be equal to zero. This returns:
+The equation of motion is a differential equation, which can be solved to get $x(t)$ with the boundary conditions $x(0) = x_a$ and $x(T)=x_b$, where $T=t_b-t_a$, and $t_b$ is the final time and $t_a$ is the initial time, which we set equal to zero. This returns:
 \[ x(t)= x_a \cos(t\omega) - x_a \cot(T \omega)\sin(t \omega)+x_b\csc(T \omega)\sin(t \omega) \]
 
-Plotting the position $x$ with respect to time $t$ after defining the parameters yields the typical sinusoidal trajectory of a harmonic oscillator.
+Plotting the position $x$ with respect to time $t$ after defining the parameters yields the typical sinusoidal trajectory of a harmonic oscillator. This is illustrated in Fig.~\ref{fig:oscillator}.
 
 \begin{figure}[h]
 	\centering
@@ -171,25 +178,40 @@ Plotting the position $x$ with respect to time $t$ after defining the parameters
 	\label{fig:oscillator}
 \end{figure}
 
-With the solution for $x(t)$ plugged in, the classical action ends up being:
-\begin{multline*}
-S = \int_{0}^{T} \frac{1}{2} m (-x_a \omega \cos(t \omega) \cot(T \omega) + 
+Substituting the solution for $x(t)$ into the action, the classical action for the boundary conditions specified above is: 
+\begin{align*}
+S &= \int_{0}^{T} \frac{1}{2} m (-x_a \omega \cos(t \omega) \cot(T \omega) + 
 x_b \omega \cos(t \omega) \csc(T \omega) - 
 x_a \omega \sin(t \omega))^2 - \\
-\frac{1}{2} m \omega^2 (x_a \cos(t \omega) - 
+&\qquad \frac{1}{2} m \omega^2 (x_a \cos(t \omega) - 
 x_a \cot(T \omega) \sin(t \omega) + 
 x_b \csc(T \omega) \sin(t \omega))^2 \\
-= \frac{1}{2} m \omega (-2 x_a x_b + (x_a^2 + x_b^2) \cos(T \omega)) \csc(T \omega)
-\end{multline*} 
+&=\frac{1}{2} m \omega (-2 x_a x_b + (x_a^2 + x_b^2) \cos(T \omega)) \csc(T \omega) \; .
+\end{align*} 
 
 In the semiclassical limit, using Equation \ref{sckernel}, the kernel can be expressed as 
-\[ K=F(T) \exp \Bigg[{\Bigg\{\frac{im\omega}{2 \hbar \sin\omega T} [-2 x_a x_b + (x_a^2 + x_b^2) \cos \omega T]\Bigg\}}\Bigg],\]
+\[ K(0,x_a;T,x_b)=F(T) \exp \Bigg[{\Bigg\{\frac{im\omega}{2 \hbar \sin\omega T} [-2 x_a x_b + (x_a^2 + x_b^2) \cos \omega T]\Bigg\}}\Bigg],\]
 where $F(T)$ is the ``smooth function'', or the `prefactor', and needs to be found [5]. 
 
-\subsubsection{More Significant Example: Particle in Electric Field}
+\subsubsection{Another Example: Relativistic Particle in Electric Field}
 For a charged relativistic particle in an electric field, with motion restricted to just one spatial coordinate $x$, the Lagrangian is:
 \[ L = \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T),\]
-where $N$ is the lapse, and $k$ is the strength of the electric field in positive $x$-direction times the charge of the relativistic particle. Note that the Metric signature being used here is (- + + +).
+where $N$ is the lapse, and $k$ is the strength of the electric field in positive $x$-direction times the charge of the relativistic particle. Note that the metric signature being used here is (- + + +).
+\red{\\
+Add comment about the choice of Lagrangian? (Classically yield the same equations of motion (provided that $dL/dT =0$ when evaluated on an eom; which is the case here), but the \textit{quantum} theories are different! 
+However, given that we work in the semi-classical approximation the predictions with either Lagrangian should be similar.)
+Typical choice is:
+\begin{align}
+ 	L = - m \sqrt{\eta_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu} } + e \; A_\mu \dot{x}^{\mu} 
+\end{align}
+Here, we used:
+\begin{align}
+L = \frac{m}{2} \sqrt{\eta_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu} } + e \; A_\mu \dot{x}^{\mu} 
+\end{align}
+with $A_\mu = E_0 \; x \; \nabla_\mu t$ with $E_0$ a constant and $k := e E_0$.
+\\
+Also, since we reparametrized this path from some parameter $\tau$ to $T$ you should include this transformation (and find the factors of $N$ above).
+}
 
 We need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
 \begin{align*}
@@ -214,14 +236,14 @@ Plotting the time-coordinate $t(T)$ with respect to the spatial-coordinate $x(T)
 \end{figure}
 
 
-For the simplified case of $x_a=0$ and $t_a=0$, with the solutions for $x(T)$ and $t(T)$ plugged in, and integrating the Lagrangian over $T$ from 0 to 1, the classical action ends up being:
+For the given boundary conditions, with the solutions for $x(T)$ and $t(T)$ plugged in, and integrating the Lagrangian over $T$ from 0 to 1, the classical action  is:
 \begin{equation*}
-S = \frac{1}{4} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)
+S_{\rm cl} = \frac{1}{4} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg) \; .
 \end{equation*} 
 
 In the semiclassical limit, the kernel can then be expressed as 
-\[ K=\int_{0}^{\infty} dN\ F(T) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
-where $F(T)$ is the ``smooth function'', or the `prefactor', which we known to be of the form: $\frac{1}{\sqrt{Det(M)}}$, where $M$ is the following matrix:
+\[ K=\int_{0}^{\infty} dN\ F(\red{N}) \exp \Bigg[\frac{i}{4 \hbar} \Bigg(-2 (m N - k t_b x_b) - k (-t_b - x_b) (-t_b + x_b) \coth\bigg(\frac{k N}{2 m}\bigg)\Bigg)\Bigg],\]
+where $F(N)$ is the ``smooth function'', or the `prefactor', which we known to be of the form: $\frac{1}{\sqrt{Det(M)}}$, where $M$ is the following matrix:
 \[ M=\begin{pmatrix}
 \frac{\partial^2 S}{\partial x_a \partial x_b} & \frac{\partial^2 S}{\partial x_a \partial t_b} \\ 
 \frac{\partial^2 S}{\partial t_a \partial x_b} & \frac{\partial^2 S}{\partial t_a \partial t_b} 
@@ -240,6 +262,16 @@ Specifically, we will use the saddle point approximation. That involves allowing
 Deforming the original path is helpful in the approximation process since the path can be deformed to pass through the highest stationary point/s, with other conditions satisfied of course, and then the path integral would be dominated by that stationary point (or points). It turns out that the only extrema possible in our case are saddle points, so we deform the path to pass through a saddle point (with steepest descent?). [https://www2.ph.ed.ac.uk/~dmarendu/MOMP/lecture05.pdf]
 
 We have been talking about our oscillatory "function" as the whole integrand, but, ignoring the prefactor for now, truly what is relevant is the classical action, Scl, because when we set d(Int)/dN=0 in order to find the extrema, we get d(IScl/HBar)/dN $e^(IScl/HBar])=0$ , where the exponent term can't go to 0, and I and HBar] are constants, so we know that the extrema are given by d(Scl)/dN=0, thus the oscillatory function we are concerned with is just Scl.
+
+\red{Include final result for probability and comparison with results in literature.}
+
+
+\subsection{Relativitic particle in de Sitter spacetime}
+
+\subsubsection{Conformal coordinates}
+
+
+\subsubsection{Proper time coordinates}
 
 \subsection{Gauge Fixing} \label{gauge}
 Coping with redundant degrees of freedom in field variables.
