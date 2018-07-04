@@ -6,6 +6,8 @@
 \contentsline {subsection}{\numberline {B}Field Dynamics}{5}{}
 \contentsline {subsection}{\numberline {C}Lagrange Multipliers}{7}{}
 \contentsline {subsection}{\numberline {D}Feynman Path Integrals}{7}{}
-\contentsline {subsection}{\numberline {E}Gauge Fixing}{9}{}
-\contentsline {subsection}{\numberline {F}ADM Formalism}{9}{}
-\contentsline {section}{\numberline {}References}{9}{}
+\contentsline {subsubsection}{\numberline {1}Example: Harmonic Oscillator}{9}{}
+\contentsline {subsubsection}{\numberline {2}More Significant Example: Particle in Electric Field}{10}{}
+\contentsline {subsection}{\numberline {E}Gauge Fixing}{13}{}
+\contentsline {subsection}{\numberline {F}ADM Formalism}{13}{}
+\contentsline {section}{\numberline {}References}{13}{}
