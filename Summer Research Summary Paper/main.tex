@@ -210,23 +210,15 @@ where $\eta_{\mu \nu}$ is the metric, $\dot{x}^{\mu}$ is the proper time derivat
 L &= \frac{m}{2N}\dot{x}^{\mu} \dot{x}_{\mu} -\frac{m N}{2} + e \; A_\mu \dot{x}^{\mu}  \\
  &= \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T) \;,
 \end{align}
-with $k := e E_0$. Note that $E_0$ is the strength of the electric field in the positive $x$-direction, and that the metric signature being used here is (- + + +). The equivalence of Eqs. \ref{eq:lagrangian1} and \ref{eq:lagrangian2} can be shown by reverse engineering Eq. \ref{eq:lagrangian1} from Eq. \ref{eq:lagrangian2}. 
+with $k := e E_0$. Note that $E_0$ is the strength of the electric field in the positive $x$-direction, and that the metric signature being used here is (- + + +). The equivalence of Eqs. \ref{eq:lagrangian1} and \ref{eq:lagrangian2} can be shown by reverse engineering Eq. \ref{eq:lagrangian1} from Eq. \ref{eq:lagrangian2}. Disregarding the electric field term for now, we can solve for $N$ given:
+\begin{align}
+\frac{\delta L}{\delta N} = \frac{\delta}{\delta N} \left(\frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2}\right) = 0 \\
+\to N = -\sqrt{X'(s)^2-T'(s)^2}
+\end{align}
 
-Lagrange 
 \red{\\
-Add comment about the choice of Lagrangian? (Classically yield the same equations of motion (provided that $dL/dT =0$ when evaluated on an eom; which is the case here), but the \textit{quantum} theories are different! 
+(Classically yield the same equations of motion (provided that $dL/dT =0$ when evaluated on an eom; which is the case here), but the \textit{quantum} theories are different! 
 However, given that we work in the semi-classical approximation the predictions with either Lagrangian should be similar.)
-Typical choice is:
-\begin{align}
-L = - m \sqrt{\eta_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu} } + e \; A_\mu \dot{x}^{\mu} 
-\end{align}
-Here, we used:
-\begin{align}
-L = \frac{m}{2} \sqrt{\eta_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu} } + e \; A_\mu \dot{x}^{\mu} 
-\end{align}
-with $A_\mu = E_0 \; x \; \nabla_\mu t$ with $E_0$ a constant and $k := e E_0$.
-\\
-Also, since we reparametrized this path from some parameter $\tau$ to $T$ you should include this transformation (and find the factors of $N$ above).
 }
 
 We need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
