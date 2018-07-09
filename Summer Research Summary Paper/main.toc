@@ -8,9 +8,9 @@
 \contentsline {subsection}{\numberline {D}Feynman Path Integrals}{7}{}
 \contentsline {subsubsection}{\numberline {1}Example: Harmonic Oscillator}{8}{}
 \contentsline {subsubsection}{\numberline {2}Another Example: Relativistic Particle in Electric Field}{10}{}
-\contentsline {subsection}{\numberline {E}Relativitic particle in de Sitter spacetime}{16}{}
-\contentsline {subsubsection}{\numberline {1}Conformal coordinates}{16}{}
-\contentsline {subsubsection}{\numberline {2}Proper time coordinates}{16}{}
-\contentsline {subsection}{\numberline {F}Gauge Fixing}{16}{}
+\contentsline {subsection}{\numberline {E}Relativitic particle in de Sitter spacetime}{15}{}
+\contentsline {subsubsection}{\numberline {1}Conformal coordinates}{15}{}
+\contentsline {subsubsection}{\numberline {2}Proper time coordinates}{15}{}
+\contentsline {subsection}{\numberline {F}Gauge Fixing}{15}{}
 \contentsline {subsection}{\numberline {G}ADM Formalism}{16}{}
 \contentsline {section}{\numberline {}References}{16}{}
