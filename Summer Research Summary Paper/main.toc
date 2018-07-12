@@ -12,5 +12,5 @@
 \contentsline {subsubsection}{\numberline {1}Conformal coordinates}{15}{}
 \contentsline {subsubsection}{\numberline {2}Proper time coordinates}{15}{}
 \contentsline {subsection}{\numberline {F}Gauge Fixing}{15}{}
-\contentsline {subsection}{\numberline {G}ADM Formalism}{16}{}
-\contentsline {section}{\numberline {}References}{16}{}
+\contentsline {subsection}{\numberline {G}ADM Formalism}{15}{}
+\contentsline {section}{\numberline {}References}{15}{}
