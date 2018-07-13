@@ -6,7 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-%\usepackage{subfig}
+\usepackage{subfig}
 \usepackage{color}
 \usepackage{fourier} 
 \usepackage{array}
@@ -208,20 +208,23 @@ L = - m \sqrt{\eta_{\mu \nu} \dot{x}^{\mu} \dot{x}^{\nu} } + e \; A_\mu \dot{x}^
 where $\eta_{\mu \nu}$ is the metric, $\dot{x}^{\mu}$ is the proper time derivative of the spacetime coordinate vector $x^{\mu}$, $m$ is the mass of the particle, $e$ is the charge of the particle, and $A_\mu = E_0 \; x \; \nabla_\mu t$ with $E_0$ a constant electric field. The reparametrization $\tau = N T$, $\tau$ being proper time, introduces the Lagrange multiplier $N$ (also known as the lapse), such that $N$ goes from $0$ to $\infty$, and allows rescaling $\tau$, which goes from $0$ to $\infty$, to a new temporal variable $T$, which goes from $0$ to $1$. The introduction of the Lagrange multiplier enables us to reformulate the Lagrangian into an equivalent form which is more convenient for manipulation:
 \begin{align} \label{eq:lagrangian2}
 L &= \frac{m}{2N}\dot{x}^{\mu} \dot{x}_{\mu} -\frac{m N}{2} + e \; A_\mu \dot{x}^{\mu}  \\
- &= \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T) \;,
+\label{eq:lagrangian3}
+ &= \frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2} + k x(T) t'(T) \;, 
 \end{align}
-with $k := e E_0$. Note that $E_0$ is the strength of the electric field in the positive $x$-direction, and that the metric signature being used here is (- + + +). The equivalence of Eqs. \ref{eq:lagrangian1} and \ref{eq:lagrangian2} can be shown by reverse engineering Eq. \ref{eq:lagrangian1} from Eq. \ref{eq:lagrangian2}. Disregarding the electric field term for now, we can solve for $N$ given:
+with $k := e E_0$. Note that we are working in Minkowski space, that $E_0$ is the strength of the electric field in the positive $x$-direction, and that the Minkowski metric signature being used here is (- + + +). The equivalence of Eqs. \ref{eq:lagrangian1} and \ref{eq:lagrangian2} can be shown by reverse engineering Eq. \ref{eq:lagrangian1} from Eq. \ref{eq:lagrangian2}. We can solve for $N$ given:
 \begin{align}
-\frac{\delta L}{\delta N} = \frac{\delta}{\delta N} \left(\frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2}\right) = 0 \\
-\to N = -\sqrt{X'(s)^2-T'(s)^2}
+\frac{\delta L}{\delta N} &= \frac{\delta}{\delta N} \left(\frac{m (-t'(T)^2 + x'(T)^2)}{2N} -\frac{m N}{2}+ k x(T) t'(T)\right) = 0 \\
+\therefore N &= \pm\sqrt{t'(T)^2-x'(T)^2}  \;.
 \end{align}
+Plugging the result with the plus sign back into Eq. \ref{eq:lagrangian3}:
+\begin{align} 
+L &= \frac{-m (t'(T)^2 - x'(T)^2)}{2\left(\sqrt{t'(T)^2-x'(T)^2}\right)} -\frac{m \left(\sqrt{t'(T)^2-x'(T)^2}\right)}{2} + k x(T) t'(T) \\
+&= -\frac{m (t'(T)^2 - x'(T)^2)}{\sqrt{t'(T)^2-x'(T)^2}} + k x(T) t'(T)\\
+&= -m \sqrt{t'(T)^2-x'(T)^2} + k x(T) t'(T) \;,
+\end{align}
+which is exactly what we get from Eq. \ref{eq:lagrangian1} using the relevant metric, coordinates, and vector potential (??). Despite this equivalence, Eqs. \ref{eq:lagrangian1} and \ref{eq:lagrangian3} will lead to different quantum theories. However, classically they yield the same equations of motion, and given that we work in the semi-classical approximation, the predictions with either Lagrangian should be similar in the least.
 
-\red{\\
-(Classically yield the same equations of motion (provided that $dL/dT =0$ when evaluated on an eom; which is the case here), but the \textit{quantum} theories are different! 
-However, given that we work in the semi-classical approximation the predictions with either Lagrangian should be similar.)
-}
-
-We need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
+Using the Lagrangian in Eq. \ref{eq:lagrangian3}, we need to determine the equations of motion and solve them for $x(T)$ and $t(T)$ in order to find the classical action. The Euler-Lagrange equation gives us:
 \begin{align*}
 \frac{d}{dt}\frac{\partial L}{\partial x'}-\frac{\partial L}{\partial x} &= -k t'(T) + \frac{m x''(T)}{N} =0\\
 \frac{d}{dt}\frac{\partial L}{\partial x'}-\frac{\partial L}{\partial t} &= k x'(T) - \frac{m t''(T)}{N} =0
@@ -235,14 +238,18 @@ x_b \sinh\bigg(\frac{k N (T-1)}{2m}\bigg)\Biggr) \sinh\bigg(\frac{k N T}{2m}\big
 \end{align*} 
 
 Plotting the time-coordinate $t(T)$ with respect to the spatial-coordinate $x(T)$ after defining and varying the parameters yields insightful graphical information, as in Figure \ref{fig:trajects}, showing: \textbf{(a)} Pair production occuring due to spacelike separation of intial and final events; \textbf{(b)} Particle traveling in a straight line in the direction of the electric field (positive $x$ direction), with lightlike separation of initial and final events; \textbf{(c)} Deflection of particle with same parameters as in (b) but with timelike separation that results in an initial momentum of particle in the opposite direction to the electric field before ultimately being `turned around' by the electric field; \textbf{(d)} Pair production occuring due to spacelike separation of initial and final events, just as in (a), but for a much smaller particle mass that results in a smaller critical distance \red{(EXPLAIN)} and hence a sharper edge in the trajectory; and \textbf{(e)} Deflection of particle with same parameters as in (c) but with a smaller lapse, $N$, that results in less proper time and hence a smaller initial momentum of particle in the opposite direction to the electric field.
-
 \begin{figure}
-	\begin{tabular} {cc}
-		\includegraphics[width=0.4\linewidth]{traj1} &   \includegraphics[width=0.4\linewidth]{traj2} \\ 
-	\end{tabular}
+	\centering
+	\subfloat[Particle-antiparticle pair creation trajectory]{
+		\includegraphics[width=0.45\linewidth]{traj1}
+	}
+	\subfloat[Single particle trajectory]{
+		\includegraphics[width=0.45\linewidth]{traj2}
+	}
 	\caption{Trajectory plots for a charged relativistic particle in an electric field}
 	\label{fig:trajects}
 \end{figure}
+
 %\begin{figure}[h]
 %	\centering
 %	\includegraphics[width=0.7\linewidth]{schwinger1}

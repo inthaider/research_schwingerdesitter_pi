@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 JUL 2018 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  13 JUL 2018 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -169,7 +169,51 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
-(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\par \vskip \abovecapti
+onskip \begingroup \small \rmfamily \sbox \@tempboxa {\let \\\heading@cr #1: #2
+}\@ifdim {\wd \@tempboxa >\hsize }{\begingroup \samepage \flushing \let \footno
+te \@footnotemark@gobble #1: #2\par \endgroup }{\global \@minipagefalse \hb@xt@
+ \hsize {\hfil \unhbox \@tempboxa \hfil }}\endgroup \vskip \belowcaptionskip .
+\c@ContinuedFloat=\count106
+)
+\c@KVtest=\count107
+\sf@farskip=\skip48
+\sf@captopadj=\dimen120
+\sf@capskip=\skip49
+\sf@nearskip=\skip50
+\c@subfigure=\count108
+\c@subfigure@save=\count109
+\c@lofdepth=\count110
+\c@subtable=\count111
+\c@subtable@save=\count112
+\c@lotdepth=\count113
+\sf@top=\skip51
+\sf@bottom=\skip52
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -482,12 +526,12 @@ LaTeX Font Info:    Redeclaring math accent \mathring on input line 256.
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
-\col@sep=\dimen113
+\col@sep=\dimen121
 \ar@mcellbox=\box36
-\extrarowheight=\dimen114
+\extrarowheight=\dimen122
 \NC@list=\toks22
-\extratabsurround=\skip48
-\backup@length=\skip49
+\extratabsurround=\skip53
+\backup@length=\skip54
 \ar@cellbox=\box37
 ) (./main.aux)
 \openout1 = `main.aux'.
@@ -547,16 +591,16 @@ Class revtex4 Info: multicol was not loaded (OK!) on input line 26.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen115
+\scratchcounter=\count114
+\scratchdimen=\dimen123
 \scratchbox=\box38
-\nofMPsegments=\count107
-\nofMParguments=\count108
+\nofMPsegments=\count115
+\nofMParguments=\count116
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen116
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen124
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -614,11 +658,25 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: Incompatible package detected (regarding \caption).
+(caption)             \caption = macro:->\minipagefootnote@here \ifx \@captype 
+\@undefined \@latex@error {\noexpand \caption outside float}\@ehd \expandafter 
+\@gobble \else \refstepcounter \@captype \expandafter \@firstofone \fi {\@dblar
+g {\@caption \@captype }}.
+
+
+Package caption Warning: \caption will not be redefined since it's already
+(caption)                redefined by a document class or package which is
+(caption)                unknown to the caption package.
+See the caption package documentation for explanation.
+
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 44.
 LaTeX Font Info:    Try loading font information for FML+futmi on input line 44
 .
-
 (/usr/local/texlive/2018/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
@@ -770,40 +828,35 @@ Package pdftex.def Info: "oscillator trajectory".png  used on input line 183.
 (pdftex.def)             Requested size: 327.59857pt x 195.55269pt.
  [9 <./oscillator trajectory.png (PNG copy)>]
 [10]
-<traj1.png, id=45, 401.5pt x 443.6575pt>
+<traj1.png, id=46, 401.5pt x 443.6575pt>
 File: traj1.png Graphic file (type png)
 <use traj1.png>
-Package pdftex.def Info: traj1.png  used on input line 241.
-(pdftex.def)             Requested size: 187.19714pt x 206.85371pt.
-<traj2.png, id=46, 401.5pt x 473.77pt>
+Package pdftex.def Info: traj1.png  used on input line 245.
+(pdftex.def)             Requested size: 210.59857pt x 232.7138pt.
+<traj2.png, id=47, 401.5pt x 473.77pt>
 File: traj2.png Graphic file (type png)
 <use traj2.png>
-Package pdftex.def Info: traj2.png  used on input line 241.
-(pdftex.def)             Requested size: 187.19714pt x 220.89355pt.
- [11]
-<integrandplot.png, id=50, 507.8975pt x 293.095pt>
+Package pdftex.def Info: traj2.png  used on input line 248.
+(pdftex.def)             Requested size: 210.59857pt x 248.50887pt.
+ [11] [12 <./traj1.png (PNG copy)> <./traj2.png (PNG copy)>]
+<integrandplot.png, id=54, 507.8975pt x 293.095pt>
 File: integrandplot.png Graphic file (type png)
 <use integrandplot.png>
-Package pdftex.def Info: integrandplot.png  used on input line 300.
+Package pdftex.def Info: integrandplot.png  used on input line 307.
 (pdftex.def)             Requested size: 327.59857pt x 189.056pt.
+ [13 <./integrandplot.png (PNG copy)>] [14]
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12 <./traj1.png (PNG copy)> <./traj2.png (PNG copy)>] [13 <./integrandplot.png
- (PNG copy)>] [14]
-
-Package natbib Warning: Empty `thebibliography' environment on input line 354.
+Package natbib Warning: Empty `thebibliography' environment on input line 361.
 
 [15] [16] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 5129 strings out of 492649
- 67311 string characters out of 6129622
- 144954 words of memory out of 5000000
- 8859 multiletter control sequences out of 15000+600000
- 142072 words of font info for 179 fonts, out of 8000000 for 9000
+ 6315 strings out of 492649
+ 88775 string characters out of 6129622
+ 165805 words of memory out of 5000000
+ 10048 multiletter control sequences out of 15000+600000
+ 138795 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,28p,1238b,356s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,15n,49p,1238b,410s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-
 super/cm-super-t1.enc}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/
 8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-b
@@ -812,14 +865,15 @@ l.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-me
 x.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ml
 .pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-mli
 t.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/fourier/fourier-ms
-.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></
-usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (16 pages, 225278 bytes).
+.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putb8a.pf
+b></usr/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (16 pages, 233352 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
